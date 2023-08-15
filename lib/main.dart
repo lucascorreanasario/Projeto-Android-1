@@ -9,12 +9,28 @@ class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
 }
+ containerBuild() {
+    return Container(
+      color: Colors.red,
+      margin: const EdgeInsets.all(3),
+      width: 50,
+      height: 50,
+    );
+  }
 
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ,
+     debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(title: const Text("AppBar")),
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [containerBuild(), containerBuild(), containerBuild()],
+        ),
+      )
     );
+    
   }
 }
